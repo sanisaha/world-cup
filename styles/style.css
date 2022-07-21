@@ -1,17 +1,33 @@
+/* For changing the whole font system in the body of website */
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0 auto;
+
 }
 
+h1 {
+    font-size: 6vh;
+}
+
+/* ...........
+header section
+............... */
 header {
     background-color: black;
     padding: 20px 50px 0px 80px;
     color: white;
 }
 
-h1 {
-    font-size: 6vh;
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 40px;
+    border-radius: 20px;
 }
+
+.description {
+    width: 50%;
+}
+
 
 .head-img img {
     width: 110%;
@@ -24,7 +40,7 @@ h1 {
     color: white;
     background-color: brown;
     padding: 10px 10px;
-    width: 100px;
+    width: 120px;
     border-radius: 5px;
 }
 
@@ -35,20 +51,52 @@ h1 {
     font-weight: 500;
 }
 
-.container {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px 80px;
-    border-radius: 20px;
+/* ......
+Giving animation to the Watch-now button
+.............. */
+
+#watch-button:hover {
+    background-color: aqua;
+    width: 100px;
+    height: 50px;
+    font-size: x-large;
+}
+
+#watch-button {
+    transition: width ease 1s, height ease 1s;
+    animation: sliding 1s ease 2s infinite alternate;
+}
+
+@keyframes sliding {
+    from {
+        background-color: aqua;
+
+    }
+
+    to {
+        background-color: red;
+
+    }
+}
+
+.fa-futbol:hover {
+    background-color: blue;
+    font-size: xx-large;
+    color: greenyellow;
+    transform: matrix(5);
 
 }
 
-.description {
-    width: 50%;
+.fa-futbol {
+
+    transition: transform 5s ease, font-size 2s linear;
 }
 
 
-
+/* ........
+Main body section......
+ */
+/* Aside bar preparation for flex layout */
 aside {
     align-self: start;
     background-color: black;
@@ -99,13 +147,15 @@ aside {
     font-size: large;
 }
 
+/* ...........
+Multiple blogs arranging with grid layout. column and row described
+............. */
+
 .content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 20px;
     row-gap: 20px;
-
-
 
 }
 
@@ -140,20 +190,26 @@ footer {
     text-align: center;
 }
 
+/* ..................
+Giving footer to the website
+................... */
+.footer-content {
+    padding: 50px 200px;
+}
+
 hr {
     height: 0px;
     border: 0.1px solid white;
 }
 
-.footer-content {
-    padding: 50px 200px;
-}
-
-
 .support {
     display: flex;
     justify-content: space-around;
 }
+
+/* .......................
+Codes for linking and seceond website
+ ........................*/
 
 .new-match {
     display: flex;
@@ -180,10 +236,18 @@ hr {
     align-content: center;
 }
 
+/* ..........
+for making 3rd website
+................ */
+
 .fixture img {
     width: 312px;
     height: 175px;
 }
+
+/* ....... 
+View button only for tablet
+..........................*/
 
 .view-button {
     background-color: tomato;
@@ -200,6 +264,10 @@ hr {
     font-size: 30px;
     color: white;
 }
+
+/* ....................
+Media query for making website responsiveness for all type of device
+................... */
 
 @media screen and (max-width: 576px) {
     .container {
